@@ -25,16 +25,16 @@ ENV \
     DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT=true
 
 # Install .NET CLI dependencies
-# RUN apt-get update \
-    # && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        # libc6 \
-        # libgcc1 \
-        # libgssapi-krb5-2 \
-        # libicu66 \
-        # libssl1.1 \
-        # libstdc++6 \
-        # zlib1g \
-    # && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        libc6 \
+        libgcc1 \
+        libgssapi-krb5-2 \
+        libicu66 \
+        libssl1.1 \
+        libstdc++6 \
+        zlib1g \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
 
